@@ -76,7 +76,7 @@ const DtoTable = <T,>({ data, columns }: DtoTableType<T>) => {
 
   return (
     <div>
-      {/* Table Header */}
+      {/* Search and Filter */}
       <div className='flex items-center mb-8 gap-2'>
         <div className='flex items-center gap-2'>
           <Input
@@ -115,9 +115,9 @@ const DtoTable = <T,>({ data, columns }: DtoTableType<T>) => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
-      <div className='border rounded-md overflow-hidden'>
-        <Table>
+      {/* Table */}
+      <div className='border rounded-md overflow-auto'>
+        <Table className='w-full'>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -158,7 +158,6 @@ const DtoTable = <T,>({ data, columns }: DtoTableType<T>) => {
           </TableBody>
         </Table>
       </div>
-
       {/* Pagination */}
       <div className='flex w-full flex-col-reverse items-center justify-between gap-4 sm:flex-row sm:gap-8 text-sm'>
         <div

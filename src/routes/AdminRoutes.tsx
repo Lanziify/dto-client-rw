@@ -50,7 +50,7 @@ const AdminRoutes: React.FC<AdminRoutesProps> = (props) => {
               timely resolution of technical problems.
             </CardDescription>
           </CardHeader>
-          <CardContent >
+          <CardContent>
             <CardDescription>
               This system was developed by Lance. If you are interested how this
               system was created, you can reach out the developer by providing
@@ -72,7 +72,9 @@ const AdminRoutes: React.FC<AdminRoutesProps> = (props) => {
               {pathNames.map((path, i) => (
                 <div key={path} className='flex items-center'>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href={pathNames[0] != path ? path: `/${path}`}>
+                    <BreadcrumbLink
+                      href={pathNames[0] != path ? path : `/${path}`}
+                    >
                       {path.charAt(0).toUpperCase() +
                         path.slice(1).replace('-', ' ')}
                     </BreadcrumbLink>
@@ -84,12 +86,10 @@ const AdminRoutes: React.FC<AdminRoutesProps> = (props) => {
           </Breadcrumb>
           <Separator className='mt-4 absolute' />
         </div>
-        <main className='flex border-x flex-1 max-w-6xl w-full max-sm:w-[93%] m-auto'>
-          <div className='flex max-w-72 w-full sticky top-[125px] max-h-[calc(100vh_-_73px)] max-sm:hidden'>
-            <SideBar />
-            <Separator orientation='vertical' />
-          </div>
-          <div className='p-4 w-full flex'>
+
+        <main className='relative flex border-x flex-1 w-full max-w-6xl max-sm:w-[93%] m-auto'>
+          <SideBar />
+          <div className='w-full p-4 min-w-0'>
             <Outlet />
           </div>
         </main>

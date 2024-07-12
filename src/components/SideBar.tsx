@@ -11,8 +11,8 @@ import { SideBarMenuItemType } from '@/types/types'
 
 const SideBar = () => {
   return (
-    <aside className='flex-1'>
-      <nav className='flex flex-col p-4'>
+    <aside className='flex max-w-72 w-full border-r flex-shrink-0 sticky top-[125px] max-h-[calc(100vh_-_73px)] max-sm:hidden'>
+      <nav className='flex flex-1 flex-col p-4'>
         {sidebarItems.map((sidebarItem, index) =>
           sidebarItem.type === 'normal' ? (
             <MenuItem key={index} {...sidebarItem} />
@@ -54,7 +54,6 @@ const MenuItem: React.FC<SideBarMenuItemType> = (props) => {
         }`
       }
       to={props.path}
-
     >
       {props.icon}
       {props.name}
